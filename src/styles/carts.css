@@ -36,6 +36,11 @@
     border-radius: 20px;
 }
 
+.cards > img:hover {
+    opacity: 0.7;
+    border: 1px solid hsl(26, 100%, 55%);
+}
+
 .cardsInfo-container{
     display: flex;
     flex-direction: column;
@@ -134,10 +139,14 @@
     align-items: center;
     flex-direction: row;
     color: white;
-    background-color: hsl(26deg 96% 64% / 97%);
+    background-color: hsl(26, 100%, 55%);
     border: none;
     font-size: 16px;
     font-weight: 600
+}
+
+.button:hover , .addCard-container>img:hover{
+    opacity: 0.7;
 }
 
 .title-btn{

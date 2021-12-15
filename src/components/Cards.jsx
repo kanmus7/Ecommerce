@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import minus from '../images/icon-minus.svg'
 import plus from '../images/icon-plus.svg'
 import cart from '../images/icon-cart.svg'
@@ -6,20 +6,46 @@ import imageProduct1 from '../images/image-product-1.jpg'
 import imageProduct2 from '../images/image-product-2.jpg'
 import imageProduct3 from '../images/image-product-3.jpg'
 import imageProduct4 from '../images/image-product-4.jpg'
+import ShowCardBox from './ShowCardBox'
 import '../styles/carts.css'
 
-const Cards = () => {
+
+const Cards = () => {    
+    const [currentImg, setCurrentimg] = useState(imageProduct1)
+    const [carClick, setCardClick] = useState(false)
+    const smallImage = [
+        {
+            src: imageProduct1,
+            id: 0
+        },
+        {
+            src: imageProduct2,
+            id: 1
+        },
+        {
+            src: imageProduct3,
+            id: 2
+        },
+        {
+            src: imageProduct4,
+            id: 3
+        },
+    ]
+    const showMainProduct = (e) => {
+        setCurrentimg(e.target.src)
+    }
+
     return (
         <section className='main-section'>
             <div className='cards-container'>
                 <div className='card'>
-                    <img src={imageProduct1} alt='product'/> {/* Logica para hacer el lightbox al dar click */}
+                    <img src={currentImg} alt='product' onClick={()=> {setCardClick(!carClick)}} />
                 </div>
-                <div className='cards'> {/* logica para poner la imagen en la card segun el click */}
-                    <img src={imageProduct1} alt='product1' />
-                    <img src={imageProduct2} alt='product2' />
-                    <img src={imageProduct3} alt='product3' />
-                    <img src={imageProduct4} alt='product4' />
+                <div className='cards'>
+                    {smallImage.map((image, i) => (
+                        <img src={image.src} alt={`product${i}`} id={i} key={image.id} onClick={showMainProduct} />
+                    ))}
+                    {carClick? (<ShowCardBox setCardClick={setCardClick} smallImage={smallImage} currentImg={currentImg}/>): console.log('nada')}
                 </div>
             </div>
 
@@ -36,10 +62,10 @@ const Cards = () => {
                 <div className='buttons-container'>
                     <div className='addCard-container'>
                         <img src={minus} alt="lessImg" />
-                        <input type="number"  className='count' value='0' disabled min='0'/>
+                        <input type="number" className='count' value='0' disabled min='0' />
                         <img src={plus} alt="plusImg" />
                     </div>
-                    <button className='button' type='button'> <img src={cart} alt="cartImg" className='cart-btn'/> <p className='title-btn'>Add to cart</p> </button>
+                    <button className='button' type='button'> <img src={cart} alt="cartImg" className='cart-btn' /> <p className='title-btn'>Add to cart</p> </button>
                 </div>
             </div>
         </section>
