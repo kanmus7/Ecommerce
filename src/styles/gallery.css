@@ -41,6 +41,10 @@
     margin-bottom: 1rem;
 }
 
+.closeCard:hover , .nextCard:hover, .prevCard:hover{
+    filter: invert(48%) sepia(97%) saturate(541%) hue-rotate(345deg) brightness(100%) contrast(95%);
+}
+
 .cardImg-container >img{
     width: 620px;
     height: 630px;
