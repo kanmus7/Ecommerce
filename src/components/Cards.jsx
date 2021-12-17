@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import ShowCardBox from './ShowCardBox'
+import CardsInfo from './CardsInfo'
+import '../styles/carts.css'
+import DataContext from '../context/Context'
 import imageProduct1 from '../images/image-product-1.jpg'
 import imageProduct2 from '../images/image-product-2.jpg'
 import imageProduct3 from '../images/image-product-3.jpg'
 import imageProduct4 from '../images/image-product-4.jpg'
-import ShowCardBox from './ShowCardBox'
-import CardsInfo from './CardsInfo'
-import '../styles/carts.css'
 
 
 const Cards = () => {
+    const {  carClick, setCardClick } = useContext(DataContext)
     const [currentImg, setCurrentimg] = useState(imageProduct1)
-    const [carClick, setCardClick] = useState(false)
     const smallImage = [
         {
             src: imageProduct1,
@@ -29,6 +30,7 @@ const Cards = () => {
             id: 3
         },
     ]
+
     const showMainProduct = (e) => {
         setCurrentimg(e.target.src)
     }
@@ -43,10 +45,10 @@ const Cards = () => {
                     {smallImage.map((image, i) => (
                         <img src={image.src} alt={`product${i}`} id={i} key={image.id} onClick={showMainProduct} />
                     ))}
-                    {carClick ? (<ShowCardBox setCurrentimg={setCurrentimg} setCardClick={setCardClick} smallImage={smallImage} currentImg={currentImg} />) : console.log('nada')}
+                    {carClick && (<ShowCardBox setCurrentimg={setCurrentimg} setCardClick={setCardClick} smallImage={smallImage} currentImg={currentImg} />)}
                 </div>
             </div>
-            <CardsInfo/>            
+            <CardsInfo />
         </section>
     )
 }

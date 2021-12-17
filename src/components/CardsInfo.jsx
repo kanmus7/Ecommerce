@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import minus from '../images/icon-minus.svg'
 import plus from '../images/icon-plus.svg'
 import cart from '../images/icon-cart.svg'
+import DataContext from '../context/Context'
 
 const CardsInfo = () => {
-    let [counter, setCounter] = useState(0)
+    let { counter, setCounter, addCart, setAddCart } = useContext(DataContext)
     const setCounterButton = (e) => {
         const btn = e.target.alt
         if (btn === 'plusImg') {
             setCounter(++counter)
         }
 
-        if(btn === 'lessImg' && counter > 0){
+        if (btn === 'lessImg' && counter > 0) {
             setCounter(--counter)
         }
     }
@@ -33,7 +34,7 @@ const CardsInfo = () => {
                     <input type="number" className='count' value={counter} disabled min='0' />
                     <img src={plus} alt="plusImg" onClick={setCounterButton} />
                 </div>
-                <button className='button' type='button'> <img src={cart} alt="cartImg" className='cart-btn' /> <p className='title-btn'>Add to cart</p> </button>
+                <button className='button' type='button'  onClick={()=> setAddCart(!addCart)}> <img src={cart} alt="cartImg" className='cart-btn' /> <p className='title-btn'>Add to cart</p> </button>
             </div>
         </div>
     )
