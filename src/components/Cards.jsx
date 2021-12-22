@@ -38,19 +38,21 @@ const Cards = () => {
     }
 
     const setPic = (e) => {
-        let index = smallImage.findIndex((element) => element.src === currentImg)
+        let card = smallImage.find(img => currentImg.includes(img.src))
+        let id = card.id
+
         if (e.target.className.toLowerCase().split('-').includes('iconprev')) {
-            if (currentImg !== smallImage[0].src) {
-                if (index !== -1) {
-                    setCurrentimg(smallImage[--index].src)
+            if (card.src !== smallImage[0].src) {
+                if (id !== undefined) {
+                    setCurrentimg(smallImage[--id].src)
                 }
             }
         }
 
         if (e.target.className.toLowerCase().split('-').includes('iconnext')) {
-            if (currentImg !== smallImage[3].src) {
-                if (index !== -1) {
-                    setCurrentimg(smallImage[++index].src)
+            if (card.src !== smallImage[3].src) {
+                if (id !== undefined) {
+                    setCurrentimg(smallImage[++id].src)
                 }
             }
         }
