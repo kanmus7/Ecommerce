@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Ecommerce/static/css/main.c6f4f993.chunk.css",
+    "main.js": "/Ecommerce/static/js/main.c647b6cb.chunk.js",
+    "main.js.map": "/Ecommerce/static/js/main.c647b6cb.chunk.js.map",
+    "runtime-main.js": "/Ecommerce/static/js/runtime-main.25f04fb2.js",
+    "runtime-main.js.map": "/Ecommerce/static/js/runtime-main.25f04fb2.js.map",
+    "static/js/2.dc147960.chunk.js": "/Ecommerce/static/js/2.dc147960.chunk.js",
+    "static/js/2.dc147960.chunk.js.map": "/Ecommerce/static/js/2.dc147960.chunk.js.map",
+    "index.html": "/Ecommerce/index.html",
+    "static/css/main.c6f4f993.chunk.css.map": "/Ecommerce/static/css/main.c6f4f993.chunk.css.map",
+    "static/js/2.dc147960.chunk.js.LICENSE.txt": "/Ecommerce/static/js/2.dc147960.chunk.js.LICENSE.txt",
+    "static/media/icon-cart.539ec608.svg": "/Ecommerce/static/media/icon-cart.539ec608.svg",
+    "static/media/icon-close.c3904486.svg": "/Ecommerce/static/media/icon-close.c3904486.svg",
+    "static/media/icon-delete.1fd1f1f7.svg": "/Ecommerce/static/media/icon-delete.1fd1f1f7.svg",
+    "static/media/icon-minus.f5073aa8.svg": "/Ecommerce/static/media/icon-minus.f5073aa8.svg",
+    "static/media/icon-next.9621183a.svg": "/Ecommerce/static/media/icon-next.9621183a.svg",
+    "static/media/icon-plus.b297868c.svg": "/Ecommerce/static/media/icon-plus.b297868c.svg",
+    "static/media/icon-previous.80616402.svg": "/Ecommerce/static/media/icon-previous.80616402.svg",
+    "static/media/image-product-1.520cc50b.jpg": "/Ecommerce/static/media/image-product-1.520cc50b.jpg",
+    "static/media/image-product-2.c8bb0aac.jpg": "/Ecommerce/static/media/image-product-2.c8bb0aac.jpg",
+    "static/media/image-product-3.af5c71ba.jpg": "/Ecommerce/static/media/image-product-3.af5c71ba.jpg",
+    "static/media/image-product-4.9962862e.jpg": "/Ecommerce/static/media/image-product-4.9962862e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25f04fb2.js",
+    "static/js/2.dc147960.chunk.js",
+    "static/css/main.c6f4f993.chunk.css",
+    "static/js/main.c647b6cb.chunk.js"
+  ]
+}
