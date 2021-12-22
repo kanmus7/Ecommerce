@@ -249,6 +249,7 @@ body{
     .addCard-container{
         width: 100%;
         margin-bottom: 1rem;
+        max-width: 100%;
     }
 
     .button{
