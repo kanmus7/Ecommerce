@@ -7,10 +7,12 @@ import imageProduct1 from '../images/image-product-1.jpg'
 import imageProduct2 from '../images/image-product-2.jpg'
 import imageProduct3 from '../images/image-product-3.jpg'
 import imageProduct4 from '../images/image-product-4.jpg'
+import iconNext from '../images/icon-next.svg'
+import iconPrev from '../images/icon-previous.svg'
 
 
 const Cards = () => {
-    const {  carClick, setCardClick } = useContext(DataContext)
+    const { carClick, setCardClick } = useContext(DataContext)
     const [currentImg, setCurrentimg] = useState(imageProduct1)
     const smallImage = [
         {
@@ -39,7 +41,13 @@ const Cards = () => {
         <section className='main-section'>
             <div className='cards-container'>
                 <div className='card'>
+                    <div className='iconPrev-Container'>
+                        <img src={iconPrev} alt="iconPrev" />
+                    </div>
                     <img src={currentImg} alt='product' onClick={() => { setCardClick(!carClick) }} />
+                    <div className='iconNext-Container'>
+                        <img src={iconNext} alt="iconNext"/>
+                    </div>
                 </div>
                 <div className='cards'>
                     {smallImage.map((image, i) => (

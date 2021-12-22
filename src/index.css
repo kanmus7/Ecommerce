@@ -9,10 +9,197 @@ html, body{
 
 body{
     height: 100%;
+    width: 100%;
     background-color: hsl(0deg 0% 100%);
     font-family: 'Kumbh Sans', sans-serif;
 }
 
 #root{
     padding: 1rem 2rem;
+}
+
+.iconClose{
+    display: none;
+}
+
+.iconPrev-Container, .iconNext-Container{
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+
+    #root {
+        padding: 0;
+    }
+
+    header{
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .basket{
+        position: fixed;
+        z-index: 3;
+        top: 90px;
+        width: auto;
+        max-height: 450px;
+        left: 0;
+        right: 0;
+        margin: 5% auto;
+
+    } 
+
+    .lineOptions{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        padding: 0.1rem;
+    }
+
+    .line {
+        background-color: hsl(219, 9%, 45%);
+        width: 1rem;
+        height: 0.2rem;
+    }
+
+    .list-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.3rem;
+    }  
+
+    .img-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 1rem;
+    }
+
+    .headerTitle{
+        margin: 0;
+        font-size: 35px;
+        padding: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .menu{
+        width: 100%;
+        padding: 0 2rem;
+    }
+    .avatar-Img{
+        width: 45px;
+        height: 45px;
+    }
+
+    .headerHr{
+        display: none;
+    }
+
+    .slide-Menu{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 55vw;
+        background-color: white;
+        padding:3rem;
+        z-index: 4;
+    }
+
+    .slide-MenuOff{
+        display: none;
+    }
+
+    .iconClose{
+        display: block;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+    }
+
+    .navOptions{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-top: 3rem;
+    }
+
+    .navOptions > li > a {
+        padding: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    .navOptions > li  {
+        padding: 1rem 0;
+    }
+
+    .main-section{
+        padding: 0;
+        margin: 0;
+    }
+
+    .cards-container{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iconPrev-Container, .iconNext-Container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+    }
+
+    .iconPrev-Container > img , .iconNext-Container > img {
+        width: 12px;
+        height: 15px;
+        margin: 0;
+    }
+
+    .iconPrev-Container{
+        margin-right: -50px;
+    }
+
+    .iconNext-Container  {
+        margin-left: -50px; 
+    }
+
+    .card > img {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cards{
+        display: none;
+    }
+
+    .cardsInfo-container{
+        display: none;
+    }
 }
