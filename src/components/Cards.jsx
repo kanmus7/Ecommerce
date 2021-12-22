@@ -10,43 +10,62 @@ import imageProduct4 from '../images/image-product-4.jpg'
 import iconNext from '../images/icon-next.svg'
 import iconPrev from '../images/icon-previous.svg'
 
+const smallImage = [
+    {
+        src: imageProduct1,
+        id: 0
+    },
+    {
+        src: imageProduct2,
+        id: 1
+    },
+    {
+        src: imageProduct3,
+        id: 2
+    },
+    {
+        src: imageProduct4,
+        id: 3
+    },
+]
 
 const Cards = () => {
     const { carClick, setCardClick } = useContext(DataContext)
-    const [currentImg, setCurrentimg] = useState(imageProduct1)
-    const smallImage = [
-        {
-            src: imageProduct1,
-            id: 0
-        },
-        {
-            src: imageProduct2,
-            id: 1
-        },
-        {
-            src: imageProduct3,
-            id: 2
-        },
-        {
-            src: imageProduct4,
-            id: 3
-        },
-    ]
+    const [currentImg, setCurrentimg] = useState(smallImage[0].src)
 
     const showMainProduct = (e) => {
         setCurrentimg(e.target.src)
+    }
+
+    const setPic = (e) => {
+        let index = smallImage.findIndex((element) => element.src === currentImg)
+        if (e.target.className.toLowerCase().split('-').includes('iconprev')) {
+            if (currentImg !== smallImage[0].src) {
+                if (index !== -1) {
+                    setCurrentimg(smallImage[--index].src)
+                }
+            }
+        }
+
+        if (e.target.className.toLowerCase().split('-').includes('iconnext')) {
+            if (currentImg !== smallImage[3].src) {
+                if (index !== -1) {
+                    setCurrentimg(smallImage[++index].src)
+                }
+            }
+        }
     }
 
     return (
         <section className='main-section'>
             <div className='cards-container'>
                 <div className='card'>
-                    <div className='iconPrev-Container'>
-                        <img src={iconPrev} alt="iconPrev" />
+                    <div className='iconPrev-Container' onClick={setPic}>
+                        <img src={iconPrev} alt="iconPrev" className='iconPrev' />
                     </div>
                     <img src={currentImg} alt='product' onClick={() => { setCardClick(!carClick) }} />
-                    <div className='iconNext-Container'>
-                        <img src={iconNext} alt="iconNext"/>
+                    <div className='iconNext-Container' onClick={setPic}>
+                        <img src={iconNext} alt="iconNext" className='iconNext' />
                     </div>
                 </div>
                 <div className='cards'>
